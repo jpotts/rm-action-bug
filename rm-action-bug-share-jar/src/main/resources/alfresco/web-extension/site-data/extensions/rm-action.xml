@@ -1,0 +1,59 @@
+<extension>
+    <modules>
+        <module>
+            <id>RM Action Bug</id>
+            <version>1.0</version>
+            <auto-deploy>true</auto-deploy>
+            <configurations>
+                <config evaluator="string-compare" condition="DocLibActions">
+                    <actions>
+                        <action id="metaversant.doclib.action.getWebScriptData"
+                                icon="callws"
+                                type="javascript"
+                                label="metaversant.doclib.action.getWebScriptData.label">
+                            <param name="function">onActionGetWebScriptData</param>
+                            <param name="successMessage">metaversant.doclib.action.getWebScriptData.msg.success</param>
+                            <param name="failureMessage">metaversant.doclib.action.getWebScriptData.msg.failure</param>
+                        </action>
+                    </actions>
+                    <actionGroups>
+                        <!-- Non-RM doclib browse -->
+                        <actionGroup id="document-browse">
+                            <action index="350" id="metaversant.doclib.action.getWebScriptData" />
+                        </actionGroup>
+
+                        <!-- Non-RM document details -->
+                        <actionGroup id="document-details">
+                            <action index="350" id="metaversant.doclib.action.getWebScriptData" />
+                        </actionGroup>
+
+                        <!-- RM record doclib browse -->
+                        <actionGroup id="rm-record-browse">
+                            <action index="401" id="metaversant.doclib.action.getWebScriptData" />
+                        </actionGroup>
+
+                        <!-- RM record document details -->
+                        <actionGroup id="rm-record-details">
+                            <action index="151" id="metaversant.doclib.action.getWebScriptData" />
+                        </actionGroup>
+
+                        <!-- RM unfiled record doclib browse -->
+                        <actionGroup id="rm-undeclared-record-browse">
+                            <action index="401" id="metaversant.doclib.action.getWebScriptData" />
+                        </actionGroup>
+
+                        <!-- RM unfiled record document details -->
+                        <actionGroup id="rm-undeclared-record-details">
+                            <action index="151" id="metaversant.doclib.action.getWebScriptData" />
+                        </actionGroup>
+                    </actionGroups>
+                </config>
+                <config evaluator="string-compare" condition="DocLibCustom">
+                    <dependencies>
+                        <js src="resources/rm-action-bug-share-jar/js/components/documentLibrary/metaversant-doclib-actions.js" />
+                    </dependencies>
+                </config>
+            </configurations>
+        </module>
+    </modules>
+</extension>

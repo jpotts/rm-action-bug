@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Get Web Script Data</shortname>
+    <description>Return some data from a web script</description>
+    <url>/metaversant/get-webscript-data?nodeRef={nodeRef}</url>
+    <family>Metaversant</family>
+    <format default="json">argument</format>
+    <authentication>user</authentication>
+</webscript>
